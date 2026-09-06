@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Roqaya's Birthday Experience ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;600;700&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<div id="fx"></div><div id="confetti"></div><div id="toast"></div>
+
+<section class="scene loading" id="loading">
+    <div class="loader-box">
+        <p class="system">SYSTEM LOADING</p>
+        <h1>Something special<br>is waking up...</h1>
+        <div class="bar"><i></i></div>
+        <p id="loadText">Collecting beautiful memories...</p>
+    </div>
+</section>
+
+<section class="scene hero hidden" id="hero">
+    <div class="rings"></div>
+    <p class="eyebrow">ATTENTION, BIRTHDAY GIRL</p>
+    <h1 class="name">ROQAYA</h1><div class="heart">♥</div>
+    <p>This entire little universe is yours tonight.</p>
+    <button class="btn danger" onclick="dontClick()">DON'T CLICK ME 👀</button>
+</section>
+
+<section class="scene caught hidden" id="caught"><div class="warning">⚠</div><p class="eyebrow">WELL WELL WELL...</p><h2>I literally told you<br><i>not to click it.</i></h2><p>But since we're here... let's make some noise.</p><button class="btn" onclick="showCake()">OKAY, LET'S GO 🔥</button></section>
+
+<section class="scene cake hidden" id="cake"><p class="eyebrow">BEFORE THE CHAOS</p><h2>Make a wish,<br><i>Roqaya.</i></h2><div class="cakeWrap"><div class="candle a"><b></b></div><div class="candle b"><b></b></div><div class="candle c"><b></b></div><div class="cakeTop"></div><div class="cakeBody"></div><div class="plate"></div></div><p>Close your eyes. Pick something impossible.</p><button class="btn" onclick="blow()">BLOW THE CANDLES 💨</button></section>
+
+<section class="scene celebration hidden" id="celebration">
+    <div class="popper left">🎉</div>
+    <div class="popper right">🎊</div>
+    <p class="eyebrow">WISH SUCCESSFULLY SENT</p><h2>HAPPY BIRTHDAY<br><i>ROQAYA!</i></h2><div class="hugeheart">♥</div>
+    <p>Now let's visit our memories.</p>
+    <button class="btn" onclick="memoryIntro()">SHOW ME THE MEMORIES →</button></section>
+
+<section class="scene memoryIntro hidden" id="memoryIntro"><p class="eyebrow">MEMORY DATABASE</p><h2>Warning.<br><i>Too much chaos detected.</i></h2><div class="scan">SCANNING 12 MEMORIES... <span></span></div><button class="btn" onclick="showVault()">ENTER THE MEMORY VAULT 🔒</button></section>
+
+<section class="scene vault hidden" id="vault"><div class="vault-ring"></div><div class="vault-card"><div class="vault-lock">🔐</div><p class="eyebrow">MEMORY VAULT LOCKED</p><h2>11 memories are<br><i>waiting for you.</i></h2><p>There is only one key to unlock everything.</p><input id="passwordInput" type="text" placeholder="ENTER THE SECRET PASSWORD" autocomplete="off"><button class="btn" onclick="checkVault()">UNLOCK ALL MEMORIES 🔓</button><p id="vaultMessage"></p></div></section>
+
+<section class="scene memories hidden" id="memories"><div class="head"><p class="eyebrow">11 FRAMES · ONE LEGENDARY FRIENDSHIP</p><h2>Our little<br><i>museum of photos.</i></h2><p>Tap any memory to make it bigger ❤️</p></div><div class="photoStage" id="photoStage">
+<div class="shot s1"><img src="./img/photo1.jpg"><em>01 · the beginning</em></div><div class="shot s2"><img src="./img/photo2.jpg"><em>02 ♥</em></div><div class="shot s3"><img src="./img/photo3.jpg"><em>03 ♥</em></div><div class="shot s4"><img src="./img/photo4.jpg"><em>04 · us being us</em></div><div class="shot s5"><img src="./img/photo5.jpg"><em>05 · main characters</em></div></div>
+<div class="grid">
+<div class="g"><img src="./img/photo6.jpg"><b>06♥</b></div>
+<div class="g"><img src="./img/photo7.jpg"><b>07♥</b></div>
+<div class="g"><img src="./img/photo8.jpg"><b>08♥</b></div>
+<div class="g"><img src="./img/photo9.jpg"><b>09♥</b></div>
+<div class="g"><img src="./img/photo10.jpg"><b>10♥</b></div>
+<div class="g"><img src="./img/photo11.jpg"><b>11♥</b></div>
+
+<button class="btn last" onclick="showLetter()">ONE LAST THING... ✉</button></section>
+
+<section class="scene letterScene hidden" id="letter"><p class="eyebrow">THIS ONE'S FROM THE HEART</p><h2>I wrote you<br><i>something.</i></h2><div class="envelope" id="envelope" onclick="openLetter()"><div class="paper"><p>Dear Roqaya,</p><div id="letterText"></div><strong>♥ Salma</strong></div><div class="flap"></div><div class="seal">♥</div></div><p class="tap">tap the envelope</p><button class="tiny hidden" id="secretBtn" onclick="showGift()">click here</button></section>
+
+<section class="scene gift hidden" id="gift">
+
+    <p class="eyebrow">YOU FOUND THE SECRET</p>
+
+    <h2>Wait.<br><i>I'm still not done.</i></h2>
+
+    <div class="giftbox" onclick="openGift(this)">
+        <div class="lid"></div>
+        <div class="box">🎁</div>
+    </div>
+
+    <p id="giftHint">Tap the gift.</p>
+
+
+    <div id="reasons" class="reasons hidden">
+
+        <h3>4 things I love about you ❤️</h3>
+
+        <button onclick="nextReason()">
+            OPEN A REASON ✦
+        </button>
+
+        <p id="reason"></p>
+
+    </div>
+
+
+    <button id="finishBtn" class="btn hidden" onclick="go('fakeEnd')">
+        ONE LAST THING ❤️
+    </button>
+
+</section>
+
+<section class="scene fakeEnd hidden" id="fakeEnd"><p class="eyebrow">TRANSMISSION COMPLETE</p><h2>Okay...<br><i>now we're done.</i></h2><p>Seriously this time.</p><button class="btn" onclick="sike()">FINISH ❤️</button></section>
+
+<section class="scene finale hidden" id="finale"><div class="finalPhotos"></div><p class="eyebrow">ABSOLUTELY NOT DONE</p><h2>SIKE! 😭🔥</h2><h3>HAPPY BIRTHDAY<br><i>ROQAYA</i></h3><div class="finalheart">♥</div><p>Here's to more pictures, more nonsense, more late nights, and more memories we haven't made yet.</p><p class="sign">Made with love by Salma ❤️</p><button class="restart" onclick="location.reload()">↻ EXPERIENCE IT AGAIN</button></section>
+
+<div id="lightbox" onclick="this.classList.remove('show')"><img id="bigImg"></div><script src="script.js"></script></body></html>
